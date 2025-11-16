@@ -1,117 +1,140 @@
+# 🛒 API de Gerenciamento de Loja (Peças, Serviços e Usuários)
 
-🛒 API de Gerenciamento de Loja
+Esta é uma API desenvolvida em **Node.js**, usando **Express**, **MongoDB/Mongoose** e **JWT**, com o objetivo de gerenciar **peças**, **serviços** e **usuários**, além de controlar acesso por meio de autenticação com **JSON Web Token**.
 
-API para gerenciar peças, serviços e usuários, com autenticação JWT e rotas privadas.
+---
 
-🚀 Funcionalidades
+## 🚀 Funcionalidades
 
-Cadastro de usuário
+### 👤 Usuários
+- Cadastro de usuário  
+- Login com autenticação JWT  
+- Controle de acesso por token  
 
-Login com autenticação JWT
+### 🧩 Peças
+- Cadastrar peças  
+- Listar peças  
+- Atualizar peças  
+- Deletar peças  
 
-Rotas protegidas
+### 🛠 Serviços
+- Cadastrar serviços  
+- Listar serviços  
 
-CRUD de Peças
+### 🔐 Segurança
+- Middleware de autenticação JWT  
+- Rotas privadas só acessíveis com token válido  
 
-CRUD de Serviços
+---
 
-Integração com MongoDB Atlas
+## 🧰 Tecnologias Utilizadas
 
-CORS ativo
+- **Node.js**
+- **Express**
+- **Mongoose (MongoDB)**
+- **dotenv**
+- **JWT (jsonwebtoken)**
+- **CORS**
 
-Projeto usando módulos ES (import/export)
+---
 
-🧰 Tecnologias Utilizadas
+## 📁 Estrutura do Projeto
 
-Node.js
-
-Express
-
-Mongoose
-
-JWT
-
-dotenv
-
-CORS
-
-📁 Estrutura do Projeto
 /api
- ├── api.js
- ├── CadastroUsuarios.js
- ├── CadastroPecas.js
- ├── CadastroServicos.js
- ├── package.json
- └── .env
+├── api.js
+├── CadastroUsuarios.js
+├── CadastroPecas.js
+├── CadastroServicos.js
+├── package.json
+└── .env
 
-⚙️ Variáveis de Ambiente
+yaml
+Copiar código
 
-Crie um arquivo .env:
+---
 
-MONGO_URI=sua_string_mongodb
-SECRET_KEY=sua_chave_jwt
+## ⚙️ Configuração das Variáveis de Ambiente
 
-📦 Instalação
-git clone https://github.com/seu-user/seu-repo.git
+Crie um arquivo **.env** na raiz do projeto com:
+
+MONGO_URI=sua_string_de_conexao_do_mongo
+SECRET_KEY=sua_chave_secreta_jwt
+
+yaml
+Copiar código
+
+---
+
+## 📦 Instalação
+
+Clone o repositório e instale as dependências:
+
+```bash
+git clone https://github.com/seu-usuario/seu-repo.git
 cd seu-repo
 npm install
-
-▶ Rodando o Projeto
+▶️ Executando o Servidor
+bash
+Copiar código
 npm start
+Servidor disponível em:
 
-
-Servidor:
-
+arduino
+Copiar código
 http://localhost:3000
-
 🔐 Autenticação JWT
+A API utiliza autenticação via JSON Web Token.
+O token deve ser enviado no header:
 
-Passe o token no header:
-
-Authorization: seuToken
-
-
-Sem "Bearer".
+makefile
+Copiar código
+Authorization: seuTokenAqui
+📌 Obs: não é necessário usar Bearer antes do token.
 
 📌 Rotas da API
 🔓 Rotas Públicas
 ➤ POST /cadastro-usuario
+Cadastra um novo usuário.
 
-Cadastra novo usuário.
+Body exemplo:
 
+json
+Copiar código
+{
+  "nome": "Bruno",
+  "senha": "1234"
+}
 ➤ POST /login
+Faz login e retorna o token JWT.
 
-Retorna um token JWT.
+Resposta exemplo:
 
-🔒 Rotas Privadas (Token Obrigatório)
+json
+Copiar código
+{
+  "token": "aqui_vai_o_token"
+}
+🔒 Rotas Privadas (Token obrigatório)
+📦 Peças
 ➤ GET /
-
-Lista todas as peças.
+Lista todas as peças cadastradas.
 
 ➤ POST /cadastro
-
-Cadastra peça.
+Cadastra uma nova peça.
 
 ➤ PUT /atualizar/:id
-
-Atualiza peça.
+Atualiza uma peça.
 
 ➤ DELETE /deletar/:id
+Deleta uma peça pelo ID.
 
-Remove peça.
-
+🛠 Serviços
 ➤ POST /cadastro-servicos
-
-Cadastra serviços.
+Cadastra um novo serviço.
 
 ➤ GET /lista-servicos
+Lista todos os serviços.
 
-Lista serviços.
-
-📜 License
-
-This project is open-source and free to use.
-
-👨‍💻 Author
-
-Developed by Bruno Siqueira
+🧑‍💻 Autor
+Desenvolvido por Bruno Siqueira
+Projeto open-source.
