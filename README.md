@@ -72,20 +72,17 @@ git clone https://github.com/seu-usuario/seu-repo.git
 cd seu-repo
 npm install
 ▶️ Executando o Servidor
-bash
-Copiar código
+
 npm start
 Servidor disponível em:
 
-arduino
-Copiar código
+
 http://localhost:3000
 🔐 Autenticação JWT
 A API utiliza autenticação via JSON Web Token.
 O token deve ser enviado no header:
 
-makefile
-Copiar código
+
 Authorization: seuTokenAqui
 📌 Obs: não é necessário usar Bearer antes do token.
 
@@ -96,8 +93,7 @@ Cadastra um novo usuário.
 
 Body exemplo:
 
-json
-Copiar código
+
 {
   "nome": "Bruno",
   "senha": "1234"
@@ -107,8 +103,7 @@ Faz login e retorna o token JWT.
 
 Resposta exemplo:
 
-json
-Copiar código
+
 {
   "token": "aqui_vai_o_token"
 }
