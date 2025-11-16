@@ -48,8 +48,7 @@ Esta é uma API desenvolvida em **Node.js**, usando **Express**, **MongoDB/Mongo
 ├── package.json
 └── .env
 
-yaml
-Copiar código
+
 
 ---
 
@@ -60,8 +59,7 @@ Crie um arquivo **.env** na raiz do projeto com:
 MONGO_URI=sua_string_de_conexao_do_mongo
 SECRET_KEY=sua_chave_secreta_jwt
 
-yaml
-Copiar código
+
 
 ---
 
